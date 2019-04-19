@@ -1,7 +1,7 @@
 ## What is it?
 This bot can help you to increase your volumes at Onederx Trading Challenge. More info about the challenge: [https://trade.onederx.com/leaderboard](https://trade.onederx.com/leaderboard)
 
-## How does it works?
+## How does it work?
 Bot makes buy and sell trades in both directions. 
 
 ## What is OnederX?
@@ -14,7 +14,7 @@ Bot makes buy and sell trades in both directions.
 1. This bot will spend small amount of money on bid-ask difference while trading in both directions and boosting your volume. Make sure you understand this point.
 2. You need to keep the daily number of orders sent below 1000 to participate in Active trader nomination.
 3. Bot will close your position to zero at the end.
-4. Use it on your own risk. 
+4. Use it at your own risk. 
 
 
 ## How to use
