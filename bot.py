@@ -105,10 +105,13 @@ class Trader:
             max_buy_price, min_sell_price = self.calc_buy_and_sell_prices()
 
             if position < 0:
-                symbol.send_limit("buy", max_buy_price, abs(position))
+                max_vol = symbol.max_vol_till_price("sell", max_buy_price)
+                if max_vol > 0:
+                    symbol.send_limit("buy", max_buy_price, abs(position))
             else:
-                symbol.send_limit("sell", min_sell_price, abs(position))
-
+                max_vol = symbol.max_vol_till_price("buy", min_sell_price)
+                if max_vol > 0: 
+                    symbol.send_limit("sell", min_sell_price, abs(position))
             time.sleep(1)
 
 
@@ -148,7 +151,7 @@ class Trader:
                     break
 
             else:
-                print(f"Can't sent orders. Probably spread is too high.")
+                print(f"Can't send orders. Probably spread is too high.")
             print(f"Cycle end, left {volume_left} volume to send")
             time.sleep(1)
 

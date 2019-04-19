@@ -2,7 +2,9 @@
 This bot can help you to increase your volumes at Onederx Trading Challenge. More info about the challenge: [https://trade.onederx.com/leaderboard](https://trade.onederx.com/leaderboard)
 
 ## How does it work?
-Bot makes buy and sell trades in both directions. 
+1. Bot makes buy and sell trades in both directions. 
+2. Bot uses limit IOC orders.
+3. Bot trades only if spread is small enough and sends orders not bigger than `max_order` volume. See **Configuration** for more parameters you can control.
 
 ## What is OnederX?
 [Onederx](https://onederx.com) is crypto derivatives trading platform launched in 2018. The main trading instrument is `BTCUSD_P` which is Perpetual contract with a leverage up to **20x**.
