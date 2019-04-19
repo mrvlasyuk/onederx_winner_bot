@@ -50,8 +50,10 @@ You can provide additional arguments
                         (default: ./keys.json)
   --symbol SYMBOL       symbol to trade (default: BTCUSD_P)
   --max_order MAX_ORDER
-                        max order amount to sent (default: 2000)
+                        max order amount to send (default: 200)
   --max_n_orders MAX_N_ORDERS
-                        max number of orders to sent (default: 500)
+                        max number of orders to send (default: 500)
   --max_spread_pcnt MAX_SPREAD_PCNT
-                        max spread percent we want to trade (default: 0.001)```
+                        max spread percent we want to trade (default: 0.001)
+
+```

@@ -21,7 +21,7 @@ class Symbol:
     def send_limit(self, side, price, volume):
         self.rest_api.new_order(
             symbol=self.symbol,
-            my_id="rnd_string",
+            my_id="",
             side=side,
             price=price,
             volume=volume,
@@ -149,7 +149,7 @@ class Trader:
 
             else:
                 print(f"Can't sent orders. Probably spread is too high.")
-            print(f"Cycle end, left {volume_left} volume to sent")
+            print(f"Cycle end, left {volume_left} volume to send")
             time.sleep(1)
 
 
@@ -159,8 +159,8 @@ def parse_args():
     parser.add_argument("volume", type=int, help="volume in contracts you want to trade")
     parser.add_argument("--path_to_key", type=str, default="./keys.json", help="path to config file with your api_key and secret key.")        
     parser.add_argument("--symbol", type=str, default="BTCUSD_P", help="symbol to trade")
-    parser.add_argument("--max_order", type=int, default=2000, help="max order amount to sent")
-    parser.add_argument("--max_n_orders", type=int, default=500, help="max number of orders to sent")
+    parser.add_argument("--max_order", type=int, default=200, help="max order amount to send")
+    parser.add_argument("--max_n_orders", type=int, default=500, help="max number of orders to send")
     parser.add_argument("--max_spread_pcnt", type=float, default=0.001, help="max spread percent we want to trade")
     args = parser.parse_args()
     return args
@@ -176,14 +176,11 @@ def read_config(path):
 
 if __name__ == "__main__":
     args = parse_args()
+    print(f"Starting with params: {args}")
+
     config = read_config(args.path_to_key)
     if config:
         symbol_api = Symbol(args.symbol, config["api_key"], config["secret"])
-
         trader = Trader(symbol_api, args.max_order, args.max_spread_pcnt, args.max_n_orders)
         trader.make_volume(args.volume)
         trader.close_position()
-
-
-
-
