@@ -9,7 +9,7 @@ This bot can help you to increase your volumes at Onederx Trading Challenge. Mor
 ## What is OnederX?
 [Onederx](https://onederx.com) is crypto derivatives trading platform launched in 2018. The main trading instrument is `BTCUSD_P` which is Perpetual contract with a leverage up to **20x**.
 
-🔥 By the way, you can trade Memes on Onederx! `MEMES-BTC` is a Perpetual contract based on Onederx Meme-Index. More info: [https://memes.onederx.com](https://memes.onederx.com).
+🔥 By the way, you can trade Memes on Onederx! `MEMES_BTC` is a Perpetual contract based on Onederx Meme-Index. More info: [https://memes.onederx.com](https://memes.onederx.com).
 
 
 ## Before you start
