@@ -161,7 +161,7 @@ def parse_args():
     parser.add_argument("--symbol", type=str, default="BTCUSD_P", help="symbol to trade")
     parser.add_argument("--max_order", type=int, default=200, help="max order amount to send")
     parser.add_argument("--max_n_orders", type=int, default=500, help="max number of orders to send")
-    parser.add_argument("--max_spread_pcnt", type=float, default=0.001, help="max spread percent bot wants to trade")
+    parser.add_argument("--max_spread_pcnt", type=float, default=0.001, help="max spread percentage bot wants to trade")
     args = parser.parse_args()
     return args
 

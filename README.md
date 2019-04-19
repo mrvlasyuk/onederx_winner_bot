@@ -56,6 +56,6 @@ You can provide additional arguments
   --max_n_orders MAX_N_ORDERS
                         max number of orders to send (default: 500)
   --max_spread_pcnt MAX_SPREAD_PCNT
-                        max spread percent we want to trade (default: 0.001)
+                        max spread percentage bot wants to trade (default: 0.001)
 
 ```
