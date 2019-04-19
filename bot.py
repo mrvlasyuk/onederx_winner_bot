@@ -57,7 +57,6 @@ class Symbol:
             return sum(l["volume"] for l in self.levels[side] if l["price"] <= price)
 
 
-
 class Trader:
     def __init__(self, 
         symbol, 
@@ -78,7 +77,6 @@ class Trader:
         max_buy_price = int(mean_price * (1 + self.max_spread_pcnt / 2) )
         min_sell_price = int(mean_price * (1 - self.max_spread_pcnt / 2) )
         return max_buy_price, min_sell_price
-
 
     def calc_max_order_vol(self, volume_left):
         symbol = self.symbol
@@ -113,7 +111,6 @@ class Trader:
                 if max_vol > 0: 
                     symbol.send_limit("sell", min_sell_price, abs(position))
             time.sleep(1)
-
 
     def make_volume(self, volume_to_trade):
         symbol = self.symbol
@@ -164,7 +161,7 @@ def parse_args():
     parser.add_argument("--symbol", type=str, default="BTCUSD_P", help="symbol to trade")
     parser.add_argument("--max_order", type=int, default=200, help="max order amount to send")
     parser.add_argument("--max_n_orders", type=int, default=500, help="max number of orders to send")
-    parser.add_argument("--max_spread_pcnt", type=float, default=0.001, help="max spread percent we want to trade")
+    parser.add_argument("--max_spread_pcnt", type=float, default=0.001, help="max spread percent bot wants to trade")
     args = parser.parse_args()
     return args
 
